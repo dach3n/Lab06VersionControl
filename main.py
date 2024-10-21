@@ -2,7 +2,10 @@
 # By David Chen
 
 def encode(password):
-    pass
+    newPass = ""
+    for i in password:
+        newPass += str((int(i) + 3) % 10)
+    return newPass
 
 if __name__ == "__main__":
     while True:
@@ -16,7 +19,7 @@ if __name__ == "__main__":
 
         if choice == "1":
             myPassword = input("Please enter your password to encode: ")
-            encode(myPassword)
+            myPassword = encode(myPassword)
             print("Your password has been encoded and stored!\n")
         elif choice == "2":
             pass
