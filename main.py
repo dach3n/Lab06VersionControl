@@ -7,6 +7,14 @@ def encode(password):
         newPass += str((int(i) + 3) % 10)
     return newPass
 
+
+# decode function - Malia Arellano
+def decode(password):
+    decoded_password = ""
+    for i in password:
+        decoded_password += str((int(i) - 3) % 10)
+    return decoded_password
+
 if __name__ == "__main__":
     while True:
         print("Menu")
@@ -22,6 +30,6 @@ if __name__ == "__main__":
             myPassword = encode(myPassword)
             print("Your password has been encoded and stored!\n")
         elif choice == "2":
-            pass
+            print(f"The encoded password is {encode(myPassword)}, and the original password is {decode(myPassword)}.")
         elif choice == "3":
             break
